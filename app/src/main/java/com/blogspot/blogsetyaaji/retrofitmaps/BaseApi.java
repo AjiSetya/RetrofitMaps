@@ -30,7 +30,7 @@ public interface BaseApi {
             , @Field("txtjenis") String jenis);
 
     @FormUrlEncoded
-    @POST("insertproperti.php")
+    @POST("inputproperti.php")
     Call<MProperties> insertProperti(@Field("txtnama") String nama
             , @Field("txtjenis") String jenis);
 
