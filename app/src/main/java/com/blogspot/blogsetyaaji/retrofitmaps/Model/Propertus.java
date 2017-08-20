@@ -1,25 +1,19 @@
 
 package com.blogspot.blogsetyaaji.retrofitmaps.Model;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Propertus {
 
     @SerializedName("id")
-    @Expose
     private String id;
     @SerializedName("nama")
-    @Expose
     private String nama;
     @SerializedName("jenis")
-    @Expose
     private String jenis;
     @SerializedName("latitude")
-    @Expose
     private String latitude;
     @SerializedName("longitude")
-    @Expose
     private String longitude;
 
     public String getId() {
