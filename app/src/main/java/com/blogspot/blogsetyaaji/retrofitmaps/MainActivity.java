@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
             public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
                 View child = rv.findChildViewUnder(e.getX(), e.getY());
                 if (child != null && gestureDetector.onTouchEvent(e)) {
-                    int position = rv.getChildAdapterPosition(child);
+                    final int position = rv.getChildAdapterPosition(child);
                     final String id_properti = list_properti.get(position).getId();
                     // setup the alert builder
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity
                                     break;
                                 case 1:
                                     // edit data
-                                    edit_data(id_properti);
+                                    edit_data(id_properti, position);
                                     tampilData();
                                     break;
                                 case 2:
@@ -155,8 +155,12 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private void edit_data(String id) {
-
+    private void edit_data(String id, int posisi) {
+        Intent inten = new Intent(MainActivity.this, EditActivity.class);
+        inten.putExtra("nama", list_properti.get(posisi).getNama());
+        inten.putExtra("jenis", list_properti.get(posisi).getJenis());
+        inten.putExtra("id", id);
+        startActivity(inten);
     }
 
     private void tampilData() {
