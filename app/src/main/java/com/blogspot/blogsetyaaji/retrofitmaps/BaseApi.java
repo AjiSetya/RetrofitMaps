@@ -27,17 +27,21 @@ public interface BaseApi {
     @POST("editproperti.php")
     Call<MProperties> editProperti(@Field("txtid") String id
             , @Field("txtnama") String nama
-            , @Field("txtjenis") String jenis);
+            , @Field("txtjenis") String jenis
+            , @Field("txtlatitude") double latitude
+            , @Field("txtlongitude") double longitude);
 
     @FormUrlEncoded
     @POST("inputproperti.php")
     Call<MProperties> insertProperti(@Field("txtnama") String nama
-            , @Field("txtjenis") String jenis);
+            , @Field("txtjenis") String jenis
+            , @Field("txtlatitude") double latitude
+            , @Field("txtlongitude") double longitude);
 
     class BaseApiUtama {
         public static BaseApi buat() {
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://192.168.20.64/app_masterproperti/")
+                    .baseUrl("http://192.168.95.120/app_masterproperti/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 

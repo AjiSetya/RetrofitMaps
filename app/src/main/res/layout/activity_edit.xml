@@ -21,6 +21,15 @@
             android:layout_height="wrap_content"
             android:hint="Jenis"
             android:id="@+id/txteditjenis"/>
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mapedit"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

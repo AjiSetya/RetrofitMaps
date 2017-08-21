@@ -159,6 +159,8 @@ public class MainActivity extends AppCompatActivity
         Intent inten = new Intent(MainActivity.this, EditActivity.class);
         inten.putExtra("nama", list_properti.get(posisi).getNama());
         inten.putExtra("jenis", list_properti.get(posisi).getJenis());
+        inten.putExtra("lat", list_properti.get(posisi).getLatitude());
+        inten.putExtra("long", list_properti.get(posisi).getLongitude());
         inten.putExtra("id", id);
         startActivity(inten);
     }
@@ -226,7 +228,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(MainActivity.this, MapsActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
